@@ -1144,6 +1144,7 @@ public class MoviePlayer implements
                 mVideoView.stopPlayback();
                 mVideoView.setVisibility(View.INVISIBLE);
                 clearVideoInfo();
+                mActivityContext.releaseEffects();
                 mMovieItem = next;
                 mActivityContext.refreshMovieInfo(mMovieItem);
                 doStartVideo(false, 0, 0);
@@ -1180,6 +1181,7 @@ public class MoviePlayer implements
             mVideoView.setVisibility(View.INVISIBLE);
             mVideoView.setVisibility(View.VISIBLE);
             clearVideoInfo();
+            mActivityContext.releaseEffects();
             mFirstBePlayed = false;
             mController.setCanReplay(true);
             mController.showEnded();
